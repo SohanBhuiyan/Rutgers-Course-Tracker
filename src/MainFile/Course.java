@@ -77,27 +77,57 @@ public class Course {
         }
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public void creatingTracker(String url) {
         Thread t1 = new Thread(new Sniper(this,url));
         t1.start();
     }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     public String getUsername() {
         return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
         return password;
     }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public String getSection() {
         return section;
     }
 
-
-
-
+    public void setSection(String section) {
+        this.section = section;
+    }
 
 }

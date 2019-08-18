@@ -36,13 +36,8 @@ public class MainController implements Initializable {
 
     // Snipe Button Action
     public void addNewCourseToTracker(ActionEvent event) {
-        String username;
-        String password;
         String semesterSelected;
-
        // setUpColumns();
-        username = tf_username.getText();
-        password = tf_password.getText();
         semesterSelected = semester.getValue();
         String name_of_courseSection = courseUrl.getText();
         String name_of_course = courseName.getText();
@@ -55,9 +50,13 @@ public class MainController implements Initializable {
                 .courseName(name_of_course)
                 .section(name_of_courseSection)
                 .controller(this)
+                .status("sniping....")
                 .build();
-        items.add(course);
-        tableView.setItems(items);
+
+        //items.add(course);
+      // tableView.setItems(items);
+        tableView.getItems().add(course);
+      //  StartUp.tableView.getItems().add(course);
 
         semesterSelected = semesterSelected.equals("FALL") ? "9" : "1";
         String year = academicYear.getText();

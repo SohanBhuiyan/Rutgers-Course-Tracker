@@ -28,6 +28,7 @@ public class Sniper implements Runnable {
         boolean open = false;
         System.setProperty("webdriver.chrome.driver", "C:\\Selenium\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
+
         while(open == false) {
             driver.get(url);
             WebElement element;
