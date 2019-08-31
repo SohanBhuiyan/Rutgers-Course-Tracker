@@ -42,7 +42,6 @@ public class Sniper implements Runnable {
 
 
             if(!element.getText().equals("0")) {
-                open = true;
                 break;
             }
             Thread.sleep(5000); // change this to impact how often to refresh the page
