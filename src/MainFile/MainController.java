@@ -51,13 +51,7 @@ public class MainController implements Initializable {
         String courseUrl = "http://sis.rutgers.edu/soc/#keyword?keyword="+name_of_course_section+"&semester="+semesterSelected+year+"&campus=NB&level=U";  //url takes you directly to the course page
         course.creatingTracker(courseUrl);
     }
-
-    // method to declunk code in addNewCourseToTracker method.
-    public void setUpColumns() {
-        sectionColumn.setCellValueFactory(new PropertyValueFactory<Course,String>("section"));
-        courseNameColumn.setCellValueFactory(new PropertyValueFactory<Course,String>("courseName"));
-        statusColumn.setCellValueFactory(new PropertyValueFactory<Course,String>("status"));
-    }
+    
     // refresh the listview to show new added courses
     public void updateListView() {
         tableView.refresh();
