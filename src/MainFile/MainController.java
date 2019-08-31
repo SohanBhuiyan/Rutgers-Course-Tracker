@@ -29,27 +29,26 @@ public class MainController implements Initializable {
 
 
 
-    /** code is attached to the snipe button. Sets up variables from textfield that user fills out.
-     * also updates the TableView content so it shows it correctly.*/
+    // snipe button action
     public void addNewCourseToTracker(ActionEvent event) {
-        String semesterSelected;
-        semesterSelected = semester.getValue();
-        String name_of_courseSection = courseUrl.getText();
+        String semesterSelected = semester.getValue();
+        String name_of_course_section = courseUrl.getText();
         String name_of_course = courseName.getText();
+
 
         Course course = new Course.Builder()
                 .username(tf_username.getText())
                 .password(tf_password.getText())
                 .courseName(name_of_course)
-                .section(name_of_courseSection)
+                .section(name_of_course_section)
                 .controller(this)
                 .status("sniping....")
                 .build();
-        tableView.getItems().add(course);
 
+        tableView.getItems().add(course);
         semesterSelected = semesterSelected.equals("FALL") ? "9" : "1";
         String year = academicYear.getText();
-        String courseUrl = "http://sis.rutgers.edu/soc/#keyword?keyword="+name_of_courseSection+"&semester="+semesterSelected+year+"&campus=NB&level=U";  //url takes you directly to the course page
+        String courseUrl = "http://sis.rutgers.edu/soc/#keyword?keyword="+name_of_course_section+"&semester="+semesterSelected+year+"&campus=NB&level=U";  //url takes you directly to the course page
         course.creatingTracker(courseUrl);
     }
 
