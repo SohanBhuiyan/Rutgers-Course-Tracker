@@ -9,20 +9,6 @@ public class Course {
     private String section;
     public MainController controller;
 
-    // constructor
- /**   public Course(String user,String pass,MainController controller,String section, String course) {
-        username = user;
-        password = pass;
-        this.section = section;
-        // change this every semester so that the "&semester" is correct. 1 = SPRING 9 = FALL.
-        this.url = "http://sis.rutgers.edu/soc/#keyword?keyword="+section+"&semester=12019&campus=NB&level=U";
-        this.courseName = course;
-        this.status = "sniping...";
-        this.controller = controller;
-        creatingTracker(url);
-    }
-**/
-
     private Course(Builder builder){
         this.url = builder.url;
         this.username = builder.username;
